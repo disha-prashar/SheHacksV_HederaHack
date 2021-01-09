@@ -11,7 +11,6 @@ public class CharityRestServer {
         return "Greetings from Charity Rest Server!";
     }
 
-
     @RequestMapping(value = "/donate", method = RequestMethod.POST)
     public String donate() {
         return "ABC";
