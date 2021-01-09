@@ -16,6 +16,8 @@ import java.util.concurrent.TimeoutException;
 
 public class HederaExamples {
 
+    private Client testNetClient;
+
     public static void main(String[] args) throws TimeoutException, HederaPreCheckStatusException, HederaReceiptStatusException {
 
         //Grab your Hedera testnet account ID and private key
@@ -77,23 +79,26 @@ public class HederaExamples {
 
         System.out.println("The new account balance is: " +accountBalanceNew.hbars);
     }
+
     // returns the remaining account balance after transferring money
-    public AccountBalance donate(AccountId userId, AccountId charityId, int amount, Client testNetClient) throws TimeoutException, HederaPreCheckStatusException{
+    public AccountBalance donate(long userId, long charityId, int amount) throws TimeoutException, HederaPreCheckStatusException{
         //Transfer hbar
+        AccountId accountId = new AccountId(userId);
+        AccountId charityAccountId = new AccountId(charityId);
         TransactionResponse sendHbar = new TransferTransaction()
-                .addHbarTransfer(userId, Hbar.fromTinybars(amount)) //Sending account
-                .addHbarTransfer(charityId, Hbar.fromTinybars(amount)) //Receiving account
+                .addHbarTransfer(accountId, Hbar.fromTinybars(amount)) //Sending account
+                .addHbarTransfer(charityAccountId, Hbar.fromTinybars(amount)) //Receiving account
                 .execute(testNetClient);
 
         //Check the new account's balance
         AccountBalance accountBalance = new AccountBalanceQuery()
-                .setAccountId(userId)
+                .setAccountId(accountId)
                 .execute(testNetClient);
 
         return accountBalance;
     }
-    // creates an account for user
-    public void createAccount(){
+    // creates the client
+    public Client createClient(){
 
         //Grab your Hedera testnet account ID and private key
         AccountId myAccountId = AccountId.fromString(Dotenv.load().get("MY_ACCOUNT_ID"));
@@ -102,20 +107,20 @@ public class HederaExamples {
         //Create your Hedera testnet client
         Client client = Client.forTestnet();
         client.setOperator(myAccountId, myPrivateKey);
-    }
 
-    public AccountBalance viewAccountBalance(Client testNetClient, AccountId userId) throws TimeoutException, HederaPreCheckStatusException{
+        return client;
+    }
+    // views account balance
+    public AccountBalance viewAccountBalance(long userId) throws TimeoutException, HederaPreCheckStatusException{
 
         //Check the new account's balance
+        AccountId accountId = new AccountId(userId);
         AccountBalance accountBalance = new AccountBalanceQuery()
-                .setAccountId(userId)
+                .setAccountId(accountId)
                 .execute(testNetClient);
 
         return accountBalance;
     }
-
-
-
 
 }
 
