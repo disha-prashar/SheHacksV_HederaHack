@@ -1,12 +1,13 @@
 package hederahack.pages;
 
+import static org.rendersnake.HtmlAttributesFactory.name;
+import static org.rendersnake.HtmlAttributesFactory.type;
+
 import java.io.IOException;
 
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;
 import org.springframework.web.bind.annotation.ResponseBody;
-
-import static org.rendersnake.HtmlAttributesFactory.*;
 
 public class LoginPage implements Renderable {
 
@@ -17,7 +18,7 @@ public class LoginPage implements Renderable {
                 .write("Login")
                 ._h1();
 
-        html.form(name("login").method("GET").action("donate"));
+        html.form(name("login").method("POST").action("/"));
 
         RenderUtils.renderInputField(html, "User", "", "input");
         RenderUtils.renderInputField(html, "Password", "", "password");
@@ -25,5 +26,6 @@ public class LoginPage implements Renderable {
         html.input(type("submit").class_("btn btn-primary").value("Submit"));
 
         html._form();
+
     }
 }

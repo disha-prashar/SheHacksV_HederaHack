@@ -1,21 +1,20 @@
 package hederahack.pages;
 
+import static org.rendersnake.HtmlAttributesFactory.class_;
+
 import java.io.IOException;
 
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;
-import org.rendersnake.RequestUtils;
-import org.springframework.stereotype.Component;
-import static org.rendersnake.HtmlAttributesFactory.*;
 
 public class DonationResultPage implements Renderable {
 
     String userId;
     long amount;
     String charityId;
-    long balance;
+    String balance;
 
-    public DonationResultPage(String userId, long amount, String charityId, long balance) {
+    public DonationResultPage(String userId, String charityId, long amount, String balance) {
         this.userId = userId;
         this.amount = amount;
         this.charityId = charityId;
@@ -28,7 +27,7 @@ public class DonationResultPage implements Renderable {
                 .write("Donation Result")
                 ._h1();
 
-        String msg = String.format("Thank you %s, we received your donation of %d for charity %s. Your balance is %d.",
+        String msg = String.format("Thank you %s, we received your donation of %d for charity %s. Your balance is %s.",
                 userId, amount, charityId, balance);
 
 

@@ -8,7 +8,7 @@ import java.io.IOException;
 
 import org.rendersnake.HtmlCanvas;
 
-public class RenderUtils {
+public class RenderUtils { //utility functions that allow one line of a label and a value
 
     static void renderInputField(HtmlCanvas html, String label, String value) throws IOException {
         renderInputField(html, label, value, "input");

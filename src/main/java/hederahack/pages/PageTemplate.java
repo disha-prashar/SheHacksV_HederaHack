@@ -1,11 +1,14 @@
 package hederahack.pages;
 
+import static org.rendersnake.HtmlAttributesFactory.charset;
+import static org.rendersnake.HtmlAttributesFactory.class_;
+import static org.rendersnake.HtmlAttributesFactory.http_equiv;
+import static org.rendersnake.HtmlAttributesFactory.name;
+
 import java.io.IOException;
 
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;
-
-import static org.rendersnake.HtmlAttributesFactory.*;
 
 public class PageTemplate implements Renderable {
 

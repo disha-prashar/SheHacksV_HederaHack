@@ -1,13 +1,12 @@
 package hederahack.pages;
 
+import static org.rendersnake.HtmlAttributesFactory.name;
+import static org.rendersnake.HtmlAttributesFactory.type;
+
 import java.io.IOException;
 
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;
-
-import org.springframework.stereotype.Component;
-
-import static org.rendersnake.HtmlAttributesFactory.*;
 
 public class DonationFormPage implements Renderable {
 
@@ -20,7 +19,6 @@ public class DonationFormPage implements Renderable {
         html.form(name("donate-form").method("POST").action("donate"));
         html.fieldset();
 
-        RenderUtils.renderInputField(html, "User Id", "");
         RenderUtils.renderInputField(html, "Charity Id", "");
         RenderUtils.renderInputField(html, "Amount", "");
 

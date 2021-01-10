@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>Charity App</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Eczar&family=Imbue:wght@800&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="styles.css">
+
+
+<style>
+h7 {font-family: "Eczar", sans-serif}
+body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
+.w3-bar,h1,button {font-family: "Montserrat", sans-serif}
+</style>
+<body>
+
+<!-- Navbar -->
+    <div class="w3-top">
+  <div class="w3-bar w3-light-grey w3-card w3-left-align">
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a> 
+    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
+    <a href="login.html" class="w3-bar-item w3-button w3-padding-large w3-light-green">Login</a> 
+    <a href="signup.html" class="w3-bar-item w3-button w3-padding-large w3-light-green">Sign Up</a> 
+  </div>
+</div>
+
+
+<!-- Header -->
+<header class="w3-container w3-light-green w3-center" style="padding:45px 5px">
+  <h7 class="w3-margin w3-jumbo">Helping Hands</h7>
+  <p class="w3-xlarge">Creating transparency for charities worldwide</p>
+  <!-- <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button> -->
+  <img src="https://images.pexels.com/photos/3280130/pexels-photo-3280130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Helping Hands" width=device-width height="350">
+</header>
+
+<!-- Dropdown menu 
+<div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">Operation Smile</a>
+    </div>
+</div> -->
+
+<!-- First Grid -->
+<div class="w3-row-padding w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-center">
+      <img src="https://images.unsplash.com/photo-1584568518279-d781778d1481?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" height="525px" width="800px">
+    </div>
+  </div>
+</div>
+
+<!-- Second Grid -->
+<div class="w3-row-padding w3-light-grey w3-padding-64 w3-container">
+  <div class="w3-content">
+    <div class="w3-center">
+      <h1 class ="w3-margin-left">DONATE</h1>
+
+      <form action="postdonate.html" method="get">
+        <div class="container">
+
+          <p>Fill out the following information to donate to a charity of your choice:</p>
+          <hr>
+      
+          <label for="userid"><b>User ID:</b></label>
+          <input type="text" placeholder="Enter User ID" name="userid" required>
+
+          <label for="charityid"><b>Charity ID:</b></label>
+          <input type="text" placeholder="Enter Charity ID" name="charityid" required>
+          
+          <label for="amount"><b>Amount:</b></label>
+          <input type="number" placeholder="Enter Amount in CAD" name="amount" required>
+      
+          <div class="clearfix">
+            
+            <button type="submit" class="signupbtn">Donate</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<div class="w3-container w3-black w3-center w3-opacity w3-padding-64">
+    <h1 class="w3-margin w3-xlarge">Giving is not just about donating. It's about making a difference!</h1>
+</div>
+
+</body>
+
+<script>
+    async function donateRestApiClient() {
+        alert("thank you");
+    }
+
+</script>
+
+</html>
