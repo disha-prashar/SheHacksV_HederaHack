@@ -17,38 +17,26 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
 <body>
 
 <!-- Navbar -->
-    <div class="w3-top">
+<div class="w3-top">
   <div class="w3-bar w3-light-grey w3-card w3-left-align">
     <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-white">Home</a> 
-    <a class="w3-bar-item w3-button w3-hide-medium w3-hide-large w3-right w3-hover-white w3-large w3-red" href="javascript:void(0);" onclick="myFunction()" title="Toggle Navigation Menu"><i class="fa fa-bars"></i></a>
-    <a href="login.html" class="w3-bar-item w3-button w3-padding-large w3-light-green">Login</a> 
-    <a href="signup.html" class="w3-bar-item w3-button w3-padding-large w3-light-green">Sign Up</a> 
+    <a href="index.html" class="w3-bar-item w3-button w3-padding-large w3-light-grey">Home</a> 
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-light-grey">Account</a> 
+    <a href="#" class="w3-bar-item w3-button w3-padding-large w3-light-grey">Settings</a> 
   </div>
 </div>
 
 
 <!-- Header -->
-<header class="w3-container w3-light-green w3-center" style="padding:45px 5px">
-  <h7 class="w3-margin w3-jumbo">Helping Hands</h7>
-  <p class="w3-xlarge">Creating transparency for charities worldwide</p>
-  <!-- <button class="w3-button w3-black w3-padding-large w3-large w3-margin-top">Get Started</button> -->
-  <img src="https://images.pexels.com/photos/3280130/pexels-photo-3280130.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260" alt="Helping Hands" width=device-width height="350">
+<header class="w3-container banner w3-center" style="padding:45px 5px">
+  <img src="logo.png" alt="Helping Hands" width="400px" height="350px"> 
 </header>
-
-<!-- Dropdown menu 
-<div class="dropdown">
-    <button class="dropbtn">Dropdown</button>
-    <div class="dropdown-content">
-      <a href="#">Operation Smile</a>
-    </div>
-</div> -->
 
 <!-- First Grid -->
 <div class="w3-row-padding w3-padding-64 w3-container">
   <div class="w3-content">
     <div class="w3-center">
-      <img src="https://images.unsplash.com/photo-1584568518279-d781778d1481?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1567&q=80" height="525px" width="800px">
+      <img src="https://images.unsplash.com/photo-1533222535026-754c501569dd?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80" height="525px" width="800px">
     </div>
   </div>
 </div>
@@ -63,13 +51,51 @@ body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif}
         <div class="container">
 
           <p>Here are the transactions processed to the charity of your choice:</p>
-          <hr>
 
-          <!-- <label for="charityid"><b>Charity ID:</b></label>
-          <input type="text" placeholder="Enter Charity ID" name="charityid" required> -->
+          <table id="t01">
+            <tr>
+              <th>Organization</th>
+              <th>Chapter</th> 
+              <th>Date of Donation</th>
+              <th>Amount(cad)</th>
+              <th>Donor</th>
+            </tr>
+            <tr>
+              <td>Operation Smile</td>
+              <td>Nicaragua</td>
+              <td>04-03-2020</td>
+              <td>500</td>
+              <td>anonymous</td>
+            </tr>
+            <tr>
+              <td>Operation Smile</td>
+              <td>Nicaragua</td>
+              <td>07-03-2020</td>
+              <td>1000</td>
+              <td>anonymous</td>
+            </tr>
+          </table>
+
+          <hr>
       
-          
         </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- Third Grid -->
+<div class="w3-padding-64 w3-container">
+  <div class="w3-content w3-center">
+    <div class="w3-half">
+      <form action="donate.html" method="get">
+      <button type="submit" class="block2">DONATE</button>
+      </form>
+    </div>
+
+    <div class="w3-half w3-center">
+        <form action="viewdonations.html" method="get">
+      <button type="submit" class="block2">HISTORY</button>
       </form>
     </div>
   </div>

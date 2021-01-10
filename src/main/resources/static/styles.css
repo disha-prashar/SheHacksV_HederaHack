@@ -1,3 +1,9 @@
+/* BANNER STYLE */
+
+.banner {
+  background-color: #c7ebc7
+}
+
 /* Dropdown Button */
 .dropbtn {
     background-color: #d7e6d7;
@@ -116,14 +122,39 @@ form {
 
   /* BUTTON STYLE */
   .block2 {
-    display: block2;
-    width: 30%;
-    border: none;
+    width: 250px;
     background-color: #4CAF50;
-    padding: 14px 28px;
     font-size: 16px;
-    cursor: pointer;
     text-align: center;
+  }
+
+  .w3-center{padding-left: 40px}
+
+  .align-center {
+    text-align: center;
+  }
+
+  /* TABLE STYLE */
+  table {
+    width:100%;
+  }
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 15px;
+    text-align: left;
+  }
+  #t01 tr:nth-child(even) {
+    background-color: #eee;
+  }
+  #t01 tr:nth-child(odd) {
+   background-color: #fff;
+  }
+  #t01 th {
+    background-color: black;
+    color: white;
   }
 
   
