@@ -4,12 +4,11 @@ import java.io.IOException;
 
 import org.rendersnake.HtmlCanvas;
 import org.rendersnake.Renderable;
-import org.rendersnake.ext.spring.template.Template;
+
 import org.springframework.stereotype.Component;
+
 import static org.rendersnake.HtmlAttributesFactory.*;
 
-@Component
-@Template(DefaultTemplate.class)
 public class DonationFormPage implements Renderable {
 
     @Override
@@ -18,19 +17,16 @@ public class DonationFormPage implements Renderable {
                 .write("Donation")
                 ._h1();
 
-        html.form(name("Donate").method("POST").action("donate"));
-
-        html.div();
-
+        html.form(name("donate-form").method("POST").action("donate"));
         html.fieldset();
-        html.label(for_("userId")).content("User Id:")
-                .input(id("userId").type("input").value(""));
+
+        RenderUtils.renderInputField(html, "User Id", "");
+        RenderUtils.renderInputField(html, "Charity Id", "");
+        RenderUtils.renderInputField(html, "Amount", "");
+
+        html.button(type("submit").class_("btn btn-primary")).content("Submit");
+
         html._fieldset();
-
-        html.input(type("submit").value("Submit"));
-
-        html._div();
-
         html._form();
     }
 }

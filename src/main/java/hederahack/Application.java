@@ -15,13 +15,4 @@ public class Application {
         app.run(args);
     }
 
-    /*
-     * RenderSnake view resolver, allow Spring to instantiate
-     * RenderSnake page.
-     */
-    @Bean
-    public RenderableViewResolver viewResolver() {
-        final RenderableViewResolver viewResolver = new RenderableViewResolver();
-        return viewResolver;
-    }
 }
