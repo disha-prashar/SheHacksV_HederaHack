@@ -20,7 +20,7 @@ public class DonationFormPage implements Renderable {
         html.fieldset();
 
         RenderUtils.renderInputField(html, "Charity Id", "");
-        RenderUtils.renderInputField(html, "Amount", "");
+        RenderUtils.renderInputField(html, "Amount (enter number)", "");
 
         html.button(type("submit").class_("btn btn-primary")).content("Submit");
 
